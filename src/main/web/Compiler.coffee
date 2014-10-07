@@ -5,7 +5,6 @@ priv = {}
 priv.applyCompile = (module) ->
   return (item, callback) ->
     try
-      console.log item
       item module, (ex, js) ->
         callback ex, js
     catch e
@@ -15,6 +14,7 @@ C.compile = (module, compilers, callback) ->
   res = ""
 
   async.map compilers, priv.applyCompile(module), (ex, compilations) ->
+    console.log 'here'
     if ex
       callback(ex)
       return

@@ -1,4 +1,4 @@
-function (module, callback) {
+applyfunction (module, callback) {
   return Appjangle.require(module.getSession().link(cnst.utilsLib), function(ex, ModuleUtils) {
     var importedNodesQuery;
     if (ex) {
@@ -26,7 +26,7 @@ function (module, callback) {
     });
   });
 } 7.value.js:12
-function (module, callback) {
+applyfunction (module, callback) {
   var htmlNodeQuery;
   htmlNodeQuery = module.select(module.getSession().link("https://u1.linnk.it/qc8sbw/usr/apps/textsync/upload/uitemplate"));
   htmlNodeQuery.catchUndefined(function() {
@@ -46,7 +46,7 @@ function (module, callback) {
     });
   });
 } 7.value.js:12
-function (module, callback) {
+applyfunction (module, callback) {
   var initScriptQuery;
   initScriptQuery = module.select(module.getSession().link(cnst.initScript));
   initScriptQuery.catchUndefined(function() {
@@ -67,7 +67,7 @@ function (module, callback) {
     });
   });
 } 7.value.js:12
-function (module, callback) {
+applyfunction (module, callback) {
   var qry, session;
   session = module.getSession();
   qry = module.select(session.link(cnst.moduleFactory)).select(session.link(cnst.creationScript));
@@ -83,7 +83,7 @@ function (module, callback) {
     });
   });
 } 7.value.js:12
-function (module, callback) {
+applyfunction (module, callback) {
   var labelQuery, session;
   session = module.getSession();
   labelQuery = module.select(session.link(cnst.moduleFactory)).select(session.link(cnst.label));
@@ -103,14 +103,14 @@ function (module, callback) {
     });
   });
 } 7.value.js:12
-function (module, callback) {
+applyfunction (module, callback) {
   return priv.prepareImports(module, function(ex, importCompilation) {
     return priv.getFactory(module, function(ex, creationScript) {
       return priv.getTypes(importCompilation, creationScript, callback);
     });
   });
 } 7.value.js:12
-function (module, callback) {
+applyfunction (module, callback) {
   var prefsQuery;
   prefsQuery = module.select(module.getSession().link(cnst.modulePreferences));
   prefsQuery.catchUndefined(function() {
@@ -129,7 +129,7 @@ function (module, callback) {
     });
   });
 } 7.value.js:12
-function (module, callback) {
+applyfunction (module, callback) {
   var labelQuery;
   labelQuery = module.select(module.getSession().link(cnst.label));
   labelQuery.catchUndefined(function() {
@@ -148,7 +148,7 @@ function (module, callback) {
     });
   });
 } 7.value.js:12
-function (module, callback) {
+applyfunction (module, callback) {
   var iconQuery, session;
   session = module.getSession();
   iconQuery = module.select(session.link(cnst.moduleFactory)).select(session.link(cnst.icon));
@@ -168,7 +168,7 @@ function (module, callback) {
     });
   });
 } 7.value.js:12
-function (module, callback) {
+applyfunction (module, callback) {
   return async.parallel([priv.compileMainstylesheet(module), priv.compileDependentStylesheets(module)], function(err, res) {
     var allcss, css, head, _i, _len;
     if (err) {
@@ -189,7 +189,7 @@ function (module, callback) {
     });
   });
 } 7.value.js:12
-function (module, callback) {
+applyfunction (module, callback) {
   return Appjangle.require(module.getSession().link(cnst.utilsLib), function(ex, ModuleUtils) {
     var librariesQuery;
     librariesQuery = module.select(module.getSession().link(cnst.initScript));
@@ -203,7 +203,7 @@ function (module, callback) {
     });
   });
 } 7.value.js:12
-function (module, callback) {
+applyfunction (module, callback) {
   return Appjangle.require(module.getSession().link(cnst.xmlCollection), function(ex, XmlCollections) {
     var externalScriptsQuery;
     if (ex) {
@@ -225,7 +225,7 @@ function (module, callback) {
     });
   });
 } 7.value.js:12
-function (module, callback) {
+applyfunction (module, callback) {
   return Appjangle.require(module.getSession().link(cnst.xmlCollection), function(ex, XmlCollections) {
     var externalStylesheetQuery;
     if (ex) {
