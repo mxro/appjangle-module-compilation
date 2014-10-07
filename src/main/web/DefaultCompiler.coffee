@@ -43,7 +43,8 @@ DC.compile = (module, callback) ->
     for lib in compilerLibs
       compilers.push lib.compile
       
-    Appjangle.require session.link(cnst.compilerLib), (ex, Compiler) ->
-      Compiler.compile module, compilers, callback
+    Appjangle.require module.getSession().link(cnst.compilerLib),
+      (ex, Compiler) ->
+        Compiler.compile module, compilers, callback
 
 DC<!-- one.end -->
