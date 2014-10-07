@@ -5,11 +5,7 @@ priv = {}
 priv.applyCompile = (module) ->
   return (item, callback) ->
     try
-      console.log 'do compile '+item
       item module, (ex, js) ->
-        if (ex)
-          console.log 'failed '+item
-      
         callback ex, js
     catch e
       callback {exception: "Failed on compiling item "+e}
