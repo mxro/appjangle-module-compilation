@@ -1,4 +1,6 @@
-applyfunction (module, callback) {
+apply
+
+function (module, callback) {
   return Appjangle.require(module.getSession().link(cnst.utilsLib), function(ex, ModuleUtils) {
     var importedNodesQuery;
     if (ex) {
