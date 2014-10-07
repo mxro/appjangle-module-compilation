@@ -4,7 +4,11 @@ priv = {}
 
 priv.applyCompile = (module) ->
   return (item, callback) ->
-    item(module, callback)
+    item module, (ex, js) ->
+      if (ex)
+        console.log 'failed '+item
+      
+      callback ex, js
 
 C.compile = (module, compilers, callback) ->
   res = ""
