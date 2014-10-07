@@ -14,7 +14,6 @@ C.compile = (module, compilers, callback) ->
   res = ""
 
   async.map compilers, priv.applyCompile(module), (ex, compilations) ->
-    console.log 'here'
     if ex
       callback(ex)
       return
