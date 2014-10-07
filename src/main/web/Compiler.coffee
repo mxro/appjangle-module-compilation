@@ -4,11 +4,14 @@ priv = {}
 
 priv.applyCompile = (module) ->
   return (item, callback) ->
-    item module, (ex, js) ->
-      if (ex)
-        console.log 'failed '+item
+    try
+      item module, (ex, js) ->
+        if (ex)
+          console.log 'failed '+item
       
-      callback ex, js
+        callback ex, js
+    catch e
+      callback {exception: "Failed on compiler "}
 
 C.compile = (module, compilers, callback) ->
   res = ""
