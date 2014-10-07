@@ -192,7 +192,7 @@ function (module, callback) {
 function (module, callback) {
   return Appjangle.require(module.getSession().link(cnst.utilsLib), function(ex, ModuleUtils) {
     var librariesQuery;
-    librariesQuery = module.select(session.node(cnst.initScript));
+    librariesQuery = module.select(module.getSession().link(cnst.initScript));
     librariesQuery.catchExceptions(callback);
     return librariesQuery.get(function(libNode) {
       var mu;
