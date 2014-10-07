@@ -5,6 +5,7 @@ priv = {}
 priv.applyCompile = (module) ->
   return (item, callback) ->
     try
+      console.log item
       item module, (ex, js) ->
         callback ex, js
     catch e
