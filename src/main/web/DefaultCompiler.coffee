@@ -31,7 +31,7 @@ priv.defaultCompilers = (session) ->
     # requireExternalCss
     session.link("http://slicnet.com/mxrogm/mxrogm/data/stream/2014/1/31/n6/7")
   ]
-  return [].push compilers[1]
+  return compilers
 
 cnst = {}
 cnst.compilerLib =
