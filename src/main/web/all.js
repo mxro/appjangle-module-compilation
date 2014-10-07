@@ -210,7 +210,7 @@ function (module, callback) {
       callback(ex);
       return;
     }
-    externalScriptsQuery = module.select(session.node(cnst.externalScriptList));
+    externalScriptsQuery = module.select(module.getSession().link(cnst.externalScriptList));
     externalScriptsQuery.catchExceptions(callback);
     externalScriptsQuery.catchUndefined(function() {
       return callback(null, {

@@ -35,8 +35,8 @@ C.compile = (module, callback) ->
       callback(ex)
       return
     
-    externalScriptsQuery = module.select(session
-        .node(cnst.externalScriptList))
+    externalScriptsQuery = module.select(module.getSession()
+        .link(cnst.externalScriptList))
     
     externalScriptsQuery.catchExceptions callback
     
