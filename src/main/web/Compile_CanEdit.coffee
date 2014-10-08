@@ -96,6 +96,9 @@ priv.getTypes = (importScript, creationScript, callback) ->
   
 C.compile = (module, callback) ->
   priv.prepareImports module, (ex, importCompilation) ->
+    if (ex)
+      callback ex
+      return
     priv.getFactory module, (ex, creationScript) ->
       priv.getTypes importCompilation, creationScript, callback
   
