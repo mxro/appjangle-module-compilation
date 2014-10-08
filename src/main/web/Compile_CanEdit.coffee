@@ -68,9 +68,9 @@ priv.getTypes = (importScript, creationScript, callback) ->
     initCompleteCallback = (ex, module) ->
       
       module.create(node)
-      console.log 'and here'
+      # why is it not triggered?
       tempSession.commit().get ->
-        console.log 'here'
+        
         typeQry = node.selectAll(tempSession.link(cnst.aType))
         typeQry.catchExceptions callback
         typeQry.get (nodelist) ->
