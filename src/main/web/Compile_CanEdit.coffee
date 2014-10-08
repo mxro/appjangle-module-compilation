@@ -51,10 +51,10 @@ priv.getFactory = (module, callback) ->
     callback null, creationScript.value()
 
 priv.getTypes = (importScript, creationScript, callback) ->
-  #server = Nextweb.startServer(17811)
+  server = Nextweb.startServer()
   tempSession = AppjangleJs.createSession()
     
-  tempSession.seed("local").get (node) ->
+  tempSession.seed(server).get (node) ->
     js = ""
     js += importScript.head
     js += "module.create = function(node) {"
@@ -63,14 +63,11 @@ priv.getTypes = (importScript, creationScript, callback) ->
     js += "initCompleteCallback(null, module);"
     js += importScript.tail
     
-    module = {}
-    user = Appjangle.user
+    
     initCompleteCallback = (ex, module) ->
-      
       module.create(node)
-      # why is it not triggered?
+      
       tempSession.commit().get ->
-        
         typeQry = node.selectAll(tempSession.link(cnst.aType))
         typeQry.catchExceptions callback
         typeQry.get (nodelist) ->
@@ -88,8 +85,12 @@ priv.getTypes = (importScript, creationScript, callback) ->
             callback null, {head: head, tail: ""}
 
           tempSession.close().get()
-          #server.shutdown().get()
+          server.shutdown().get()
+    # Varialbes for script
+    module = {}
+    user = Appjangle.user
     session = tempSession
+    
     eval js
   
   
